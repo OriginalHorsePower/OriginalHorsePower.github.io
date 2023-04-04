@@ -105,7 +105,7 @@ blockquote cite {
 }
 
 .gallery figure {
-    max-width: 300px;
+    max-width: calc(25% - 0px);;
     border: 1px solid #333;
     border-radius: 5px;
     padding: 5px;
@@ -163,3 +163,33 @@ section li strong {
     width: 26px;
     height: 26px;
 }
+
+.testimonials-container {
+    text-align: center;
+}
+
+.testimonial {
+    display: inline-block;
+    position: relative;
+    border: 1px solid #333;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+    padding: 10px 20px;
+    max-width: calc(30% - 20px);;
+    margin: 0 10px;
+    vertical-align: top;
+}
+
+.testimonial::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255, 255, 255, 0.85) transparent;
+}
+
+
+
