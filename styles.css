@@ -131,3 +131,35 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+section ul {
+    margin-top: 10px;
+    padding-left: 30px; /* Add left padding to indent the list */
+}
+
+section li {
+    margin-bottom: 15px; /* Add space between list items */
+}
+
+section li strong {
+    display: block; /* Make the titles display as a block, so the description starts on the next line */
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    flex: 1;
+    font-size: 1.3em;
+}
+
+.contact-item img {
+    width: 26px;
+    height: 26px;
+}
