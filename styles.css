@@ -58,6 +58,33 @@ blockquote cite {
     margin-top: 5px;
 }
 
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery figure {
+    max-width: 300px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.gallery figcaption {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
 /* Footer styling */
 footer {
     background-color: rgba(51, 51, 51, 0.75);
