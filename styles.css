@@ -4,6 +4,17 @@ body, h1, h2, p, ul {
     padding: 0;
 }
 
+/* Reset body margin */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset margin on first heading in welcome section */
+#welcome > h2:first-child {
+    margin-top: 0;
+}
+
 /* Header styling */
 header {
     display: flex;
@@ -120,9 +131,3 @@ footer {
     text-align: center;
     padding: 20px;
 }
-
-/* Welcome section styling */
-#welcome {
-    padding-top: 70px; /* Adjust this value accordingly */
-}
-

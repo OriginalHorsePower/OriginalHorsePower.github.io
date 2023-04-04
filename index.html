@@ -14,14 +14,14 @@
         <h1>Original Horse Powered Agriculture</h1>
         <nav>
             <ul>
-                <li><a href="#welcome">Welcome</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#welcome" onclick="scrollToSection(event, '#welcome')">Welcome</a></li>
+                <li><a href="#gallery" onclick="scrollToSection(event, '#gallery')">Gallery</a></li>
+                <li><a href="#testimonials" onclick="scrollToSection(event, '#testimonials')">Testimonials</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="introduction">
+    <section id="welcome">
         <h2>About Original Horse Powered Agriculture</h2>
         <p>Welcome to Original Horse Powered Agriculture, where we breathe life into time-honored agricultural practices with a touch of modern innovation. Our family-owned and operated company offers a unique and sustainable approach to agriculture and timber extraction, harnessing the power of our two majestic horses as the driving force.</p>
 
@@ -38,7 +38,7 @@
         <p>Join us at Original Horse Powered Agriculture as we pay homage to the rich history of working with horses, while embracing a sustainable future for our planet. Experience the wonders of the past with the knowledge of the present, and rediscover the magic of true partnership between humans and horses.</p>
     </section>
 
-    <section>
+    <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery">
             <figure>
@@ -56,7 +56,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="testimonials">
         <h2>Testimonials</h2>
         <blockquote>
             <p>Original Horse Powered Agriculture has transformed our land and farming practices. Their dedication to sustainable methods and strong work ethic has made a lasting impact on our community. We couldn't be happier with the results!</p>
@@ -77,5 +77,21 @@
     <footer>
         <p>&copy; 2023 Original Horse Powered Agriculture. All Rights Reserved.</p>
     </footer>
+
+
+    <script>
+        function scrollToSection(event, targetId) {
+            event.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            const headerHeight = document.querySelector('header').offsetHeight;
+    
+            window.scrollTo({
+                top: targetElement.offsetTop - headerHeight,
+                behavior: 'smooth',
+            });
+        }
+    </script>
+    
+
 </body>
 </html>
