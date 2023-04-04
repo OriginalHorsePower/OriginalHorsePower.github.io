@@ -1,2 +1,3 @@
 # OriginalHorsePower.github.io
-Our Website
+
+Initial testing site for creating a completely free, informative, static web page.
