@@ -188,7 +188,7 @@ blockquote cite {
   
   .carousel-image {
     display: none;
-    /* max-width: 100%; */
+    max-width: 100%;
     max-height: 75vh;
     height: auto;
   }
