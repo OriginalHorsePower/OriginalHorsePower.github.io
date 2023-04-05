@@ -30,6 +30,9 @@ header {
     z-index: 1000;
 }
 
+nav {
+    position: relative;
+}
 
 nav ul {
     display: flex;
@@ -48,6 +51,44 @@ nav a:hover {
     text-decoration: underline;
 }
 
+nav .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+
+nav .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+nav .overlay {
+    background-color: rgba(51, 51, 51, 0.9);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+}
+
+nav.active .overlay {
+    display: flex;
+}
 
 /* Basic styling for the entire page - updated to add padding-top */
 body {
@@ -105,7 +146,7 @@ blockquote cite {
 }
 
 .gallery figure {
-    max-width: calc(25% - 0px);;
+    max-width: 300px;
     border: 1px solid #333;
     border-radius: 5px;
     padding: 5px;
@@ -124,111 +165,76 @@ blockquote cite {
     margin-top: 5px;
 }
 
-/* Footer styling */
-footer {
-    background-color: rgba(51, 51, 51, 0.75);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+#services ul {
+    list-style-position: inside;
+    padding-left: 15px;
 }
 
-section ul {
-    margin-top: 10px;
-    padding-left: 30px; /* Add left padding to indent the list */
+#services li p {
+    margin-left: 30px;
 }
 
-section li {
-    margin-bottom: 15px; /* Add space between list items */
-}
-
-section li strong {
-    display: block; /* Make the titles display as a block, so the description starts on the next line */
-}
-
-.contact-info {
-    display: flex;
-    justify-content: space-around;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    text-align: center;
-    flex: 1;
-    font-size: 1.3em;
-}
-
-.contact-item img {
-    width: 26px;
-    height: 26px;
-}
-
-.testimonials-container {
-    text-align: center;
-}
-
-.testimonial {
-    display: inline-block;
+/* Carasouel */
+.carousel {
     position: relative;
-    border: 1px solid #333;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 5px;
-    padding: 10px 20px;
-    max-width: calc(30% - 20px);;
-    margin: 0 10px;
-    vertical-align: top;
-}
-
-.testimonial::before {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -10px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent rgba(255, 255, 255, 0.85) transparent;
-}
-
-
-/* Add this at the bottom of your CSS file */
-
-/* Mobile Styles */
-@media screen and (max-width: 767px) {
-    /* Update header styles */
-    header {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    /* Update nav styles */
-    nav ul {
-      flex-direction: column;
-      gap: 5px;
-    }
-  
-    /* Update gallery styles */
-    .gallery {
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    /* Update testimonials-container styles */
-    .testimonials-container {
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    /* Update testimonial styles */
-    .testimonial {
-      width: 100%;
-    }
-  
-    /* Update contact-container styles */
-    .contact-container {
-      flex-direction: column;
-      gap: 20px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
+  .carousel-images {
+    display: flex;
+  }
+  
+  .carousel-image {
+    display: none;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .carousel-image.active {
+    display: block;
+  }
+  
+  .carousel-control {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .carousel-control.prev {
+    position: absolute;
+    left: -25px;
+  }
+  
+  .carousel-control.next {
+    position: absolute;
+    right: -25px;
+  }
+  
+
+
+@media (max-width: 727px) {
+    header h1 {
+        font-size: 18px; /* Adjust this value according to your preference */
+    }
+
+    nav a {
+        font-size: 14px; /* Adjust this value according to your preference */
+    }
+
+    nav .hamburger span {
+        width: 20px; /* Adjust this value according to your preference */
+        height: 2px; /* Adjust this value according to your preference */
+    }
+
+    body {
+        font-size: 0.8em;
+        padding-top: 70px; /* Add enough padding to account for the fixed header */
+    }
+}
+

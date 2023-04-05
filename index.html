@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Original Horse Powered Agriculture - Sustainable Farming & Timber Extraction</title>
-    <meta name="description" content="Original Horse Powered Agriculture offers sustainable farming, timber extraction, and horse-drawn wagon experiences using traditional methods and eco-friendly practices.">
-    <meta name="keywords" content="sustainable agriculture, horse powered farming, timber extraction, horse-drawn wagon, agroforestry">
+    <title>Original Horse Powered Agriculture - UK Sustainable Farming & Timber Extraction</title>
+    <meta name="description" content="Original Horse Powered Agriculture offers sustainable farming, timber extraction, and horse-drawn wagon experiences using traditional methods and eco-friendly practices in the UK.">
+    <meta name="keywords" content="UK, sustainable agriculture, horse powered farming, timber extraction, horse-drawn wagon, agroforestry">
     <link rel="stylesheet" href="styles.css">
     <script src="gallery.js"></script>
 </head>
 <body>
     <header>
         <h1>Original Horse Powered Agriculture</h1>
+
         <nav>
-            <ul>
-                <li><a href="#welcome" onclick="scrollToSection(event, '#welcome')">Welcome</a></li>
-                <li><a href="#services" onclick="scrollToSection(event, '#services')">Services</a></li>
-                <li><a href="#gallery" onclick="scrollToSection(event, '#gallery')">Gallery</a></li>
-                <li><a href="#testimonials" onclick="scrollToSection(event, '#testimonials')">Testimonials</a></li>
-                <li><a href="#contact" onclick="scrollToSection(event, '#contact')">Contact Us</a></li>
-            </ul>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="overlay">  
+                <ul>
+                    <li><a href="#welcome" onclick="scrollToSection(event, '#welcome')">Welcome</a></li>
+                    <li><a href="#services" onclick="scrollToSection(event, '#services')">Services</a></li>
+                    <li><a href="#gallery" onclick="scrollToSection(event, '#gallery')">Gallery</a></li>
+                    <li><a href="#testimonials" onclick="scrollToSection(event, '#testimonials')">Testimonials</a></li>
+                    <li><a href="#contact" onclick="scrollToSection(event, '#contact')">Contact Us</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <section id="welcome">
         <h2>About Original Horse Powered Agriculture</h2>
-        <p>Welcome to Original Horse Powered Agriculture, where we breathe life into time-honored agricultural practices with a touch of modern innovation. Our family-owned and operated company offers a unique and sustainable approach to agriculture and timber extraction, harnessing the power of our two majestic horses as the driving force.</p>
+        <p>Welcome to Original Horse Powered Agriculture, where we breathe life into time-honored agricultural practices with a touch of modern innovation within the UK. Our family-owned and operated company offers a unique and sustainable approach to agriculture and timber extraction, harnessing the power of our two majestic horses as the driving force.</p>
 
         <p>Nestled in the heart of nature, our passionate and skilled team lives and works out of a beautifully crafted horse-drawn wagon, enabling us to immerse ourselves in the environment we are devoted to preserving. Through our intimate connection with the land, we are dedicated to providing eco-friendly agricultural services and traditional timber extraction methods that evoke the spirit of a bygone era.</p>
 
@@ -50,7 +59,7 @@
         </ul>
     </section>
 
-    <section id="gallery">
+    <!-- <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery">
             <figure>
@@ -66,7 +75,23 @@
                 <figcaption>Horse-drawn wagon experience</figcaption>
             </figure>
         </div>
-    </section>
+    </section> -->
+
+    <section id="gallery">
+    <h2>Gallery</h2>
+        <div id="carousel" class="carousel">
+            
+            <div class="carousel-images">
+            <img src="img/horse8.jpg" alt="Image 1" class="carousel-image active" />
+            <img src="img/horse7.jpg" alt="Image 2" class="carousel-image" />
+            <img src="img/horse9.jpg" alt="Image 3" class="carousel-image" />
+            <!-- Add more images as needed -->
+            </div>
+
+            <button class="carousel-control prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    </section>  
 
     <section id="testimonials">
         <h2>Testimonials</h2>
@@ -105,16 +130,48 @@
 
 
     <script>
+
         function scrollToSection(event, targetId) {
             event.preventDefault();
             const targetElement = document.querySelector(targetId);
-            const headerHeight = document.querySelector('header').offsetHeight;
-    
+            const headerHeight = document.querySelector('header').offsetHeight + 10; // Add 10px to account for the new padding
+
             window.scrollTo({
                 top: targetElement.offsetTop - headerHeight,
                 behavior: 'smooth',
             });
+            }
+
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+            }
+
+            // Close the overlay when a link is clicked
+        document.querySelectorAll('nav a').forEach((link) => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav').classList.remove('active');
+                });
+        });
+
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.carousel-image');
+
+        function changeImage(direction) {
+        images[currentImageIndex].classList.remove('active');
+        currentImageIndex += direction;
+
+        if (currentImageIndex < 0) {
+            currentImageIndex = images.length - 1;
+        } else if (currentImageIndex >= images.length) {
+            currentImageIndex = 0;
         }
+
+        images[currentImageIndex].classList.add('active');
+        }
+
+
     </script>
     
 
