@@ -192,4 +192,43 @@ section li strong {
 }
 
 
+/* Add this at the bottom of your CSS file */
 
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+    /* Update header styles */
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    /* Update nav styles */
+    nav ul {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    /* Update gallery styles */
+    .gallery {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    /* Update testimonials-container styles */
+    .testimonials-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    /* Update testimonial styles */
+    .testimonial {
+      width: 100%;
+    }
+  
+    /* Update contact-container styles */
+    .contact-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
